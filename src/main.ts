@@ -6,7 +6,7 @@ const fileNameList: string[] = ["New/Test/Readme.md", "New/Test/config/project-s
 
 let items = fillHierarhy(fileNameList);
 
-function fillHierarhy(fileNameList: string[]): FileSystemItemModel[] | null {
+function fillHierarhy(fileNameList: string[]): FileSystemItemModel[] {
 	const rootFileSystemItems: FileSystemItemModel[] = [];
 
 	fileNameList.forEach(fileName => {
