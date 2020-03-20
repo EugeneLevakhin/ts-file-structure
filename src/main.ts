@@ -1,6 +1,6 @@
-import { FileSystemItemModel } from "./Models/fileSystemItemModel";
-import { FolderModel } from "./Models/folderModel";
-import { FileModel } from "./Models/fileModel";
+import { FileSystemItemModel } from "./models/fileSystemItemModel";
+import { FolderModel } from "./models/folderModel";
+import { FileModel } from "./models/fileModel";
 
 const fileNameList: string[] = ["New/Test/Readme.md", "New/Test/config/project-scratch-def.json"];
 
@@ -21,6 +21,7 @@ function fillHierarhy(fileNameList: string[]): FileSystemItemModel[] | null {
 				if (!currentFolder) {
 					if (isFile(itemName)) {
 						const file: FileModel = new FileModel(itemName, null);
+						rootFileSystemItems.push(file);
 					} else {
 						currentFolder = new FolderModel(itemName, null);
 						rootFileSystemItems.push(currentFolder);
